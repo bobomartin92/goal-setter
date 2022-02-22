@@ -1,10 +1,11 @@
  const express = require('express')
- const mongoose = require('mongoose')
  const dotenv = require('dotenv').config()
+ const connectDB = require('./config/db')
+ const colors = require('colors')
  const {errorHandler} = require('./middleware/errorMiddleware')
  const port = process.env.LOCAL_PORT
 
-
+ connectDB()
  const app = express()
  
  app.use(express.json())
